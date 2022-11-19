@@ -1,0 +1,30 @@
+.randomMinifig {
+  display: block;
+  margin-top: 12px;
+  border: 1px solid red;
+  max-width: 300px;
+}
+
+.name {
+  text-align: center;
+  font-size: 12px;
+}
+
+.image {
+  height: 150px;
+  width: 150px;
+  margin: auto;
+  margin-bottom: 12px;
+  /* border: 1px solid red; */
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+@media screen and (min-width: 600px) {
+  .Minifigs {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: auto;
+  }
+}

@@ -1,8 +1,9 @@
 import styles from "./Minifigs.module.css";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { QueryClient, QueryClientProvider, useQuery } from "react-query";
 const queryClient = new QueryClient();
 // https://rebrickable.com/api/v3/lego/minifigs/?in_theme_id=246&key=4a061f1fc0671c55d41c1d3991d185c9
+// data.results[Math.floor(Math.random() * data.count]
 
 const MinifigData = () => {
   const { isLoading, error, data } = useQuery("repoData", () =>
@@ -11,13 +12,48 @@ const MinifigData = () => {
     ).then((res) => res.json())
   );
 
+  const [randomMinifigs, setRandomMinifigs] = useState([]);
+  let howManyMinifigs = 3;
+
   useEffect(() => {
     if (data) {
-      console.log(data.results);
+      setRandomMinifigs([]);
+      let allMinifigs = data.results;
+
+      // filter out the minifigs without an image
+      let filteredMinifigs = allMinifigs.filter(
+        (minifig) => minifig.set_img_url !== null
+      );
+
+      // set the 3 random minifigs from the filtered set
+      for (let i = 0; i < howManyMinifigs; i++) {
+        setRandomMinifigs((randomMinifigs) => [
+          ...randomMinifigs,
+          filteredMinifigs[Math.floor(Math.random() * filteredMinifigs.length)],
+        ]);
+      }
     }
   }, [data]);
 
-  return <div>a</div>;
+  useEffect(() => {
+    console.log(randomMinifigs);
+  }, [randomMinifigs]);
+
+  return randomMinifigs.map((randomMinifig) => (
+    <div
+      onClick={() => {
+        onMinifigSelect(randomMinifig.set_num);
+      }}
+      className={styles.randomMinifig}
+      key={randomMinifig.name}
+    >
+      <div
+        className={styles.image}
+        style={{ backgroundImage: `url(${randomMinifig.set_img_url})` }}
+      ></div>
+      <div className={styles.name}>{randomMinifig.name}</div>
+    </div>
+  ));
 };
 
 const Minifigs = () => {
