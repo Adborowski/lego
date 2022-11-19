@@ -4,6 +4,8 @@ import App from "/src/App";
 import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
 import Checkout from "./components/Checkout.jsx/Checkout";
 import { useParams } from "react-router-dom";
+import { QueryClient, QueryClientProvider, useQuery } from "react-query";
+const queryClient = new QueryClient();
 const router = createBrowserRouter([
   {
     path: "/",
@@ -17,6 +19,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <QueryClientProvider client={queryClient}>
+      <RouterProvider router={router} />
+    </QueryClientProvider>
   </React.StrictMode>
 );

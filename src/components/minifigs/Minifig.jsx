@@ -1,15 +1,12 @@
 import { useState } from "react";
 import styles from "./Minifigs.module.css";
 
-const Minifig = ({ figData }) => {
+const Minifig = ({ figData, onFigSelection }) => {
   const [isActive, setIsActive] = useState(false);
-
-  console.log(figData);
   return (
     <div
       onClick={() => {
         onFigSelection(figData.set_num);
-        setIsActive(!isActive);
       }}
       className={`${styles.randomMinifig} ${isActive ? styles.active : ""}`}
       key={figData.name}
