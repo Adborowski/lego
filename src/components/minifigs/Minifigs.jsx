@@ -1,7 +1,7 @@
 import styles from "./Minifigs.module.css";
 
 const Minifigs = () => {
-  return <h2>minifigs!</h2>;
+  return <div className={styles.Minifigs}>minifigs!</div>;
 };
 
 export default Minifigs;

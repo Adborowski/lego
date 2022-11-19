@@ -1,5 +1,5 @@
 import styles from "./App.module.css";
-import Minifigs from "./components/minifigs/minifigs";
+import Minifigs from "./components/minifigs/Minifigs";
 const App = () => {
   return (
     <div className={styles.Welcome}>
