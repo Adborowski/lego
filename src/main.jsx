@@ -1,12 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import Welcome from "/src/Welcome";
+import App from "/src/App";
 import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
-
+import Checkout from "./components/Checkout.jsx/Checkout";
+import { useParams } from "react-router-dom";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Welcome />,
+    element: <App />,
+  },
+  {
+    path: "/checkout/:setId",
+    element: <Checkout />,
   },
 ]);
 

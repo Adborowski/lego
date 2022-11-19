@@ -21,6 +21,10 @@
   background-repeat: no-repeat;
 }
 
+.active {
+  background-color: yellow;
+}
+
 @media screen and (min-width: 600px) {
   .Minifigs {
     display: grid;

@@ -2,9 +2,17 @@ import styles from "./Minifigs.module.css";
 import { useEffect, useState } from "react";
 import { QueryClient, QueryClientProvider, useQuery } from "react-query";
 const queryClient = new QueryClient();
+import { useParams } from "react-router-dom";
+import Minifig from "./Minifig";
 
 const Minifigs = (props) => {
   const MinifigData = () => {
+    const [redirect, setRedirect] = useState();
+    const onFigSelection = (setId) => {
+      setRedirect(setId);
+      console.log(setId);
+    };
+
     const { isLoading, error, data } = useQuery("repoData", () =>
       fetch(
         "https://rebrickable.com/api/v3/lego/minifigs/?in_theme_id=246&key=4a061f1fc0671c55d41c1d3991d185c9&page_size=400"
@@ -14,6 +22,7 @@ const Minifigs = (props) => {
     const [randomMinifigs, setRandomMinifigs] = useState([]);
     let howManyMinifigs = 3; // how many random figs do we want (default 3)
 
+    // set random minifigs
     useEffect(() => {
       if (data) {
         setRandomMinifigs([]);
@@ -36,22 +45,15 @@ const Minifigs = (props) => {
       }
     }, [data]);
 
+    useEffect(() => {
+      console.log(randomMinifigs);
+    }, [randomMinifigs]);
+
     return randomMinifigs.map((randomMinifig) => (
-      <div
-        onClick={() => {
-          props.onFigSelection(randomMinifig.set_num);
-        }}
-        className={styles.randomMinifig}
-        key={randomMinifig.name}
-      >
-        <div
-          className={styles.image}
-          style={{ backgroundImage: `url(${randomMinifig.set_img_url})` }}
-        ></div>
-        <div className={styles.name}>{randomMinifig.name}</div>
-      </div>
+      <Minifig key={randomMinifig.name} figData={randomMinifig} />
     ));
   };
+
   return (
     <QueryClientProvider client={queryClient}>
       <div className={styles.Minifigs}>
