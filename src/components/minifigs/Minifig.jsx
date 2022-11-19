@@ -1,8 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "./Minifigs.module.css";
 
-const Minifig = ({ figData, onFigSelection }) => {
-  const [isActive, setIsActive] = useState(false);
+const Minifig = ({ onFigSelection, figData, isActive }) => {
   return (
     <div
       onClick={() => {
