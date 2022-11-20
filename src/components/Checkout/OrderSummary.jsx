@@ -7,8 +7,9 @@ const OrderSummary = (props) => {
   console.log(props.figData);
 
   return (
-    <div className={styles.figDisplay}>
-      <Minifig figData={props.figData} />
+    <div className={styles.OrderSummary}>
+      <h2>Order Summary</h2>
+      <Minifig figData={props.figData} onFigSelection={() => {}} />
       <FigParts figData={props.figData} />
     </div>
   );

@@ -1,24 +1,30 @@
 .FigParts {
-  border: 1px solid red;
   /* max-width: 200px; */
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-gap: 3px;
+  margin-top: 3px;
 }
 
 .figPart {
-  border: 1px solid blue;
+  border: 1px solid black;
   padding: 12px;
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  grid-gap: 12px;
 }
 
 .name {
   font-size: 12px;
-  text-align: center;
 }
 
 .image {
-  height: 100px;
-  background-position: center;
+  height: 50px;
+  background-position: left;
   background-size: contain;
   background-repeat: no-repeat;
-  margin-bottom: 12px;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }

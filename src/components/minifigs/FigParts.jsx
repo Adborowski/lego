@@ -34,7 +34,9 @@ const FigParts = (figData) => {
               className={styles.image}
               style={{ backgroundImage: `url(${figPart.part.part_img_url})` }}
             ></div>
-            <div className={styles.name}> {figPart.part.name}</div>
+            <div className={styles.text}>
+              <div className={styles.name}> {figPart.part.name}</div>
+            </div>
           </div>
         );
       })}
