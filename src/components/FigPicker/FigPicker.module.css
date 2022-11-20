@@ -1,0 +1,16 @@
+.minifigs {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 12px;
+  margin: auto;
+  margin-top: 12px;
+  max-width: 700px;
+}
+
+@media screen and (max-width: 500px) {
+  .minifigs {
+    display: block;
+    grid-template-columns: unset;
+    max-width: 250px;
+  }
+}

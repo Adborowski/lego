@@ -31,23 +31,6 @@
   text-align: center;
 }
 
-.minifigs {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 12px;
-  margin: auto;
-  margin-top: 12px;
-  max-width: 600px;
-}
-
-@media screen and (max-width: 500px) {
-  .minifigs {
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-template-columns: unset;
-    max-width: 250px;
-  }
-}
-
 .name {
   text-align: center;
   font-size: 16px;

@@ -1,5 +1,5 @@
 import styles from "./App.module.css";
-import FigPicker from "./components/minifigs/FigPicker";
+import FigPicker from "/src/components/FigPicker/FigPicker";
 import { QueryClient, QueryClientProvider, useQuery } from "react-query";
 const queryClient = new QueryClient();
 import { useEffect } from "react";

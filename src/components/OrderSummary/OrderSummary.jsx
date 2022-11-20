@@ -1,5 +1,5 @@
-import Minifig from "../minifigs/Minifig";
-import FigParts from "../minifigs/FigParts";
+import Minifig from "/src/components/Minifig/Minifig";
+import FigParts from "/src/components/FigParts/FigParts";
 import styles from "./OrderSummary.module.css";
 import { useState, useEffect } from "react";
 

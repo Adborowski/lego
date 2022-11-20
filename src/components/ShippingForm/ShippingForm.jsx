@@ -3,7 +3,6 @@ import * as Yup from "yup";
 import styles from "./ShippingForm.module.css";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { QueryClient, QueryClientProvider, useQuery } from "react-query";
 
 const ShippingForm = () => {
   const navigate = useNavigate();
@@ -12,7 +11,10 @@ const ShippingForm = () => {
 
   useEffect(() => {
     if (confirmation) {
-      navigate("/");
+      setIsLoading(false);
+      window.setTimeout(() => {
+        navigate("/");
+      }, 500);
     }
   }, [confirmation]);
 
@@ -42,7 +44,10 @@ const ShippingForm = () => {
       .matches("^[0-9]{5}(?:-[0-9]{4})?$", "Invalid Zip code"),
   });
 
+  const [isLoading, setIsLoading] = useState(false);
+
   async function handleFormSubmit(values) {
+    setIsLoading(true);
     let response = await fetch(`https://api.mocki.io/v2/ac449b3d`, {
       method: "POST",
       headers: {
@@ -207,11 +212,10 @@ const ShippingForm = () => {
                   }
                   type="submit"
                 >
-                  Submit
+                  {!isLoading && !confirmation && <span>Submit</span>}
+                  {isLoading && !confirmation && <span>Submitting...</span>}
+                  {!isLoading && confirmation && <span>Success!</span>}
                 </button>
-                {confirmation && (
-                  <div className={styles.confirmation}>{confirmation}</div>
-                )}
               </div>
             </Form>
           );
