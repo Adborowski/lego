@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { QueryClient, QueryClientProvider, useQuery } from "react-query";
+import styles from "./FigParts.module.css";
 
 const FigParts = (figData) => {
   const location = useLocation();
@@ -24,9 +25,21 @@ const FigParts = (figData) => {
     }
   }, [partsData]);
 
-  return figParts.map((figPart) => {
-    return <div key={figPart.part.name}>{figPart.part.name}</div>;
-  });
+  return (
+    <div className={styles.FigParts}>
+      {figParts.map((figPart) => {
+        return (
+          <div className={styles.figPart} key={figPart.part.name}>
+            <div
+              className={styles.image}
+              style={{ backgroundImage: `url(${figPart.part.part_img_url})` }}
+            ></div>
+            <div className={styles.name}> {figPart.part.name}</div>
+          </div>
+        );
+      })}
+    </div>
+  );
 };
 
 export default FigParts;

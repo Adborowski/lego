@@ -1,0 +1,19 @@
+.FigParts {
+  border: 1px solid red;
+  max-width: 200px;
+}
+
+.figPart {
+  border: 1px solid blue;
+}
+
+.name {
+  font-size: 12px;
+}
+
+.image {
+  height: 100px;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
