@@ -3,17 +3,22 @@ import ReactDOM from "react-dom/client";
 import App from "/src/App";
 import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
 import Checkout from "./components/Checkout/Checkout";
-import { useParams } from "react-router-dom";
+import Welcome from "./components/Welcome/Welcome";
 import { QueryClient, QueryClientProvider, useQuery } from "react-query";
+
 const queryClient = new QueryClient();
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: <Welcome />,
   },
   {
     path: "/checkout",
     element: <Checkout />,
+  },
+  {
+    path: "/mysterybox",
+    element: <App />,
   },
 ]);
 

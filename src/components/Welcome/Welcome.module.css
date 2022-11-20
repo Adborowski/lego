@@ -1,0 +1,14 @@
+.Welcome {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.controls {
+}
+
+button {
+  color: black;
+  margin-top: 18px;
+}
