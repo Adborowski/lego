@@ -12,9 +12,7 @@ const ShippingForm = () => {
 
   useEffect(() => {
     if (confirmation) {
-      window.setTimeout(() => {
-        navigate("/");
-      }, 1000);
+      navigate("/");
     }
   }, [confirmation]);
 

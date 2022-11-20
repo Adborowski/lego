@@ -47,7 +47,7 @@ const App = () => {
   return (
     <div className={styles.App}>
       <div className={styles.content}>
-        <h1 className={styles.headline}>Welcome to Lego Minifig randomizer!</h1>
+        <h1 className={styles.headline}>Choose your minifig</h1>
         <QueryClientProvider client={queryClient}>
           <FigPicker figData={randomMinifigs} />
         </QueryClientProvider>
