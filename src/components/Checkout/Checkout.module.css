@@ -2,9 +2,11 @@
   width: 100%;
   display: grid;
   padding: 12px;
+  max-width: 800px;
+  margin: auto;
 }
 
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 700px) {
   .Checkout {
     display: grid;
     grid-template-columns: 3fr 2fr;

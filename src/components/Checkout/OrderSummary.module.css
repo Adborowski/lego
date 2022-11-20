@@ -2,7 +2,6 @@
   padding: 18px;
   background-color: var(--color-3);
   border-radius: 6px;
-  margin: 6px;
 }
 
 .OrderSummary h2 {
@@ -10,7 +9,7 @@
   color: black;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 700px) {
   .OrderSummary {
     order: -1;
   }

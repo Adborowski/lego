@@ -1,9 +1,15 @@
+@font-face {
+  font-family: "Quicksand";
+  src: url("./public/Quicksand.ttf") format("truetype");
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Helvetica", "sans-serif";
   color: white;
+  font-family: var(--font-1);
 }
 
 :root {
@@ -11,6 +17,10 @@
   --color-2: #2f3253;
   --color-3: #fafafa;
   --color-4: #dadada;
+  /* lego brand colors */
+  --color-5: #ffd700;
+  --color-6: #da291c;
+  --font-1: "Quicksand";
 }
 
 body {
@@ -37,4 +47,21 @@ h1 {
 
 .Welcome {
   margin: 12px;
+}
+
+button {
+  padding: 12px 48px;
+  font-size: 16px;
+  font-weight: 800;
+  border: 0;
+  border-radius: 60px;
+  margin: auto;
+  display: block;
+  background-color: var(--color-5);
+  transition: 0.3s all ease;
+}
+
+button:disabled {
+  background-color: var(--color-4);
+  opacity: 0.25;
 }

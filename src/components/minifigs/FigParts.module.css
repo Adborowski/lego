@@ -3,11 +3,10 @@
 }
 
 .figPart {
-  padding: 12px;
   display: grid;
   grid-template-columns: 50px 1fr;
   grid-gap: 12px;
-  margin-bottom: 3px;
+  margin-top: 12px;
   border-radius: 12px;
 }
 
@@ -44,4 +43,10 @@
   background-repeat: no-repeat;
   mix-blend-mode: multiply;
   filter: contrast(1);
+}
+
+.partCount {
+  color: black;
+  font-size: 12px;
+  margin-top: 18px;
 }

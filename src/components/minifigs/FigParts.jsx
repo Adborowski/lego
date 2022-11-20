@@ -27,6 +27,9 @@ const FigParts = (figData) => {
 
   return (
     <div className={styles.FigParts}>
+      <div className={styles.partCount}>
+        There are {figParts.length} parts in this minifig:
+      </div>
       {figParts.map((figPart) => {
         return (
           <div className={styles.figPart} key={figPart.part.name}>

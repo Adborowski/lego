@@ -15,14 +15,19 @@
   border-radius: 60px;
   margin-bottom: 12px;
   display: block;
-  padding: 3px;
+  padding: 6px 12px;
   margin-top: 12px;
   background-color: var(--color-4);
+}
+
+.Minifig a:hover {
+  background-color: var(--color-5);
 }
 
 .Minifig a span {
   color: black;
   font-size: 12px;
+  display: block;
   text-align: center;
 }
 
@@ -45,10 +50,11 @@
 
 .name {
   text-align: center;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 500;
   color: black;
   margin-top: 12px;
+  font-weight: 600;
 }
 
 .image {
@@ -63,28 +69,13 @@
 }
 
 .active {
-  -webkit-box-shadow: 0px 0px 5px 5px rgba(250, 203, 63, 1);
-  -moz-box-shadow: 0px 0px 5px 5px rgba(250, 203, 63, 1);
-  box-shadow: 0px 0px 5px 5px rgba(250, 203, 63, 1);
+  -webkit-box-shadow: 0px 0px 5px 5px var(--color-5);
+  -moz-box-shadow: 0px 0px 5px 5px var(--color-5);
+  box-shadow: 0px 0px 5px 5px var(--color-5);
 }
 
 .controls {
   display: block;
   width: 100%;
   padding: 12px;
-}
-
-.controls button {
-  margin: auto;
-  display: block;
-  border: 0;
-  padding: 18px 36px;
-  border-radius: 60px;
-  background-color: lightgreen;
-  transition: 0.3s all ease;
-}
-
-button:disabled {
-  background-color: lightgrey;
-  opacity: 0.5;
 }
