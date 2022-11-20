@@ -4,7 +4,7 @@ import styles from "./OrderSummary.module.css";
 import { useState, useEffect } from "react";
 
 const OrderSummary = (props) => {
-  console.log(props.figData);
+  // console.log(props.figData);
 
   return (
     <div className={styles.OrderSummary}>

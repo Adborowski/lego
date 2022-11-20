@@ -5,7 +5,7 @@ import ShippingForm from "./ShippingForm";
 
 const Checkout = () => {
   const location = useLocation();
-  console.log(location.state.selectedFig);
+  // console.log(location.state.selectedFig);
 
   return (
     <div className={styles.Checkout}>

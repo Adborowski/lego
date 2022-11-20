@@ -18,6 +18,19 @@ body {
   position: relative;
 }
 
+.App {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media screen and (max-width: 500px) {
+  .App {
+    height: unset;
+  }
+}
+
 h1 {
   text-align: center;
 }

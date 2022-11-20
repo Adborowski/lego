@@ -6,6 +6,7 @@ const Minifig = ({ onFigSelection, figData, isActive }) => {
     <div
       onClick={() => {
         onFigSelection(figData);
+        console.log(figData.set_url);
       }}
       className={`${styles.Minifig} ${isActive ? styles.active : ""}`}
       key={figData.name}
@@ -14,6 +15,9 @@ const Minifig = ({ onFigSelection, figData, isActive }) => {
         className={styles.image}
         style={{ backgroundImage: `url(${figData.set_img_url})` }}
       ></div>
+      <a target="_blank" href={figData.set_url}>
+        <span>Show details</span>
+      </a>
       <div className={styles.name}>{figData.name}</div>
     </div>
   );

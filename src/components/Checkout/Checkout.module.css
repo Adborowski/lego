@@ -1,5 +1,7 @@
 .Checkout {
   width: 100%;
+  display: grid;
+  padding: 12px;
 }
 
 @media screen and (min-width: 500px) {

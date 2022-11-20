@@ -45,11 +45,13 @@ const App = () => {
 
   // pass the data down to FigPicker
   return (
-    <div className={styles.Welcome}>
-      <h1 className={styles.headline}>Welcome to Lego Minifig randomizer!</h1>
-      <QueryClientProvider client={queryClient}>
-        <FigPicker figData={randomMinifigs} />
-      </QueryClientProvider>
+    <div className={styles.App}>
+      <div className={styles.content}>
+        <h1 className={styles.headline}>Welcome to Lego Minifig randomizer!</h1>
+        <QueryClientProvider client={queryClient}>
+          <FigPicker figData={randomMinifigs} />
+        </QueryClientProvider>
+      </div>
     </div>
   );
 };

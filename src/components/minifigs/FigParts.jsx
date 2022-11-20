@@ -36,6 +36,7 @@ const FigParts = (figData) => {
             ></div>
             <div className={styles.text}>
               <div className={styles.name}> {figPart.part.name}</div>
+              <div className={styles.id}> {figPart.part.part_num}</div>
             </div>
           </div>
         );
