@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "/src/App";
 import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
-import Checkout from "./components/Checkout.jsx/Checkout";
+import Checkout from "./components/Checkout/Checkout";
 import { useParams } from "react-router-dom";
 import { QueryClient, QueryClientProvider, useQuery } from "react-query";
 const queryClient = new QueryClient();
