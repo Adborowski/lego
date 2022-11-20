@@ -1,10 +1,15 @@
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import styles from "./ShippingForm.module.css";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 
 const ShippingForm = () => {
   const reqError = "Field required"; // error message for required fields
+  const [confirmation, setConfirmation] = useState("");
+
+  useEffect(() => {
+    console.log(confirmation);
+  }, [confirmation]);
 
   // regex for phone number validation: https://ihateregex.io/expr/phone/
 
@@ -32,9 +37,19 @@ const ShippingForm = () => {
       .matches("^[0-9]{5}(?:-[0-9]{4})?$", "Invalid Zip code"),
   });
 
-  const handleFormSubmit = (values) => {
-    console.log(values);
-  };
+  async function handleFormSubmit(values) {
+    let response = await fetch(`https://api.mocki.io/v2/ac449b3d`, {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+
+      body: JSON.stringify(values),
+    });
+    let data = await response.json();
+    setConfirmation(data.message);
+  }
 
   return (
     <div className={styles.ShippingForm}>
@@ -189,6 +204,9 @@ const ShippingForm = () => {
                 >
                   Submit
                 </button>
+                {confirmation && (
+                  <div className={styles.confirmation}>{confirmation}</div>
+                )}
               </div>
             </Form>
           );

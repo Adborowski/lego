@@ -72,3 +72,11 @@ button {
   margin: auto;
   display: block;
 }
+
+.confirmation {
+  font-size: 12px;
+  text-align: center;
+  max-width: 250px;
+  margin: auto;
+  margin-top: 18px;
+}
