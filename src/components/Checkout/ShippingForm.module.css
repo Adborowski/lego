@@ -32,8 +32,12 @@ label {
   padding-top: 3px;
 }
 
+.incorrect input {
+  border: 5px solid red;
+}
+
 /* group of two form items side to side */
-.pair {
+.duo {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 6px;
