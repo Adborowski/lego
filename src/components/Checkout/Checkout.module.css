@@ -2,13 +2,9 @@
   width: 100%;
 }
 
-.OrderSummary h2 {
-  padding: 12px 0px;
-}
-
 @media screen and (min-width: 500px) {
   .Checkout {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 3fr 2fr;
   }
 }

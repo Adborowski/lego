@@ -14,7 +14,7 @@ const ShippingForm = () => {
     if (confirmation) {
       window.setTimeout(() => {
         navigate("/");
-      }, 1500);
+      }, 1000);
     }
   }, [confirmation]);
 

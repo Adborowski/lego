@@ -1,19 +1,33 @@
 .FigParts {
-  /* max-width: 200px; */
-  grid-gap: 3px;
   margin-top: 3px;
 }
 
 .figPart {
-  border: 1px solid black;
+  background-color: var(--color-3);
   padding: 12px;
   display: grid;
   grid-template-columns: 50px 1fr;
   grid-gap: 12px;
+  margin-bottom: 3px;
+}
+
+.text {
+  display: flex;
+  flex: 1 1 100%;
+  width: 100%;
+  min-width: 0;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .name {
+  color: black;
   font-size: 12px;
+  max-height: 50px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
 }
 
 .image {
@@ -21,10 +35,6 @@
   background-position: left;
   background-size: contain;
   background-repeat: no-repeat;
-}
-
-.text {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  mix-blend-mode: multiply;
+  filter: contrast(1);
 }

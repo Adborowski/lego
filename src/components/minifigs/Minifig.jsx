@@ -7,7 +7,7 @@ const Minifig = ({ onFigSelection, figData, isActive }) => {
       onClick={() => {
         onFigSelection(figData);
       }}
-      className={`${styles.randomMinifig} ${isActive ? styles.active : ""}`}
+      className={`${styles.Minifig} ${isActive ? styles.active : ""}`}
       key={figData.name}
     >
       <div

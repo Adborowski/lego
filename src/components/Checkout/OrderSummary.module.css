@@ -1,0 +1,11 @@
+.OrderSummary {
+  padding: 18px;
+  background-color: var(--color-4);
+  border-radius: 6px;
+  margin: 6px;
+}
+
+.OrderSummary h2 {
+  margin-bottom: 12px;
+  color: black;
+}

@@ -3,6 +3,19 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Helvetica", "sans-serif";
+  color: white;
+}
+
+:root {
+  --color-1: #1f2137;
+  --color-2: #2f3253;
+  --color-3: #fafafa;
+  --color-4: #dadada;
+}
+
+body {
+  background-color: var(--color-1);
+  position: relative;
 }
 
 h1 {
