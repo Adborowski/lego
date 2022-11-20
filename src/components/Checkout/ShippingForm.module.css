@@ -8,10 +8,19 @@ Form {
 
 .formItem {
   width: 100%;
-  display: grid;
-  grid-template-rows: 1fr 1fr;
   margin-bottom: 12px;
   position: relative;
+}
+
+input {
+  padding: 6px;
+  width: 100%;
+}
+
+label {
+  font-size: 12px;
+  display: block;
+  margin-bottom: 3px;
 }
 
 .errors {
@@ -23,14 +32,28 @@ Form {
   padding-top: 3px;
 }
 
+/* group of two form items side to side */
 .pair {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 12px;
+  grid-gap: 6px;
 }
 
+/* group of three form items side to side */
 .trio {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 12px;
+  grid-gap: 6px;
+}
+
+.controls {
+  margin-top: 12px;
+}
+
+button {
+  padding: 12px 48px;
+  border: 0;
+  border-radius: 60px;
+  margin: auto;
+  display: block;
 }
