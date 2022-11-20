@@ -5,13 +5,21 @@ import { useEffect } from "react";
 
 const ShippingForm = () => {
   const reqError = "Field required"; // error message for required fields
+
+  // regex for phone number validation: https://ihateregex.io/expr/phone/
+
   const ShippingSchema = Yup.object().shape({
     firstName: Yup.string().required(reqError),
     lastName: Yup.string().required(reqError),
     email: Yup.string().email("Invalid email").required(reqError),
-    phoneNumber: Yup.string().required(reqError),
+    phoneNumber: Yup.string()
+      .required(reqError)
+      .matches(
+        "^[+]?[(]?[0-9]{3}[)]?[-s.]?[0-9]{3}[-s.]?[0-9]{4,6}$",
+        "Invalid phone number"
+      ),
     dateOfBirth: Yup.string().required(reqError),
-    address: Yup.string().required(reqError),
+    address: Yup.string().required(reqError).min(5, "Address is too short"),
     city: Yup.string().required(reqError),
     state: Yup.string()
       .required(reqError)
@@ -23,6 +31,10 @@ const ShippingForm = () => {
       .required(reqError)
       .matches("^[0-9]{5}(?:-[0-9]{4})?$", "Invalid Zip code"),
   });
+
+  const handleFormSubmit = (values) => {
+    console.log(values);
+  };
 
   return (
     <div className={styles.ShippingForm}>
@@ -42,7 +54,7 @@ const ShippingForm = () => {
         }}
         validationSchema={ShippingSchema}
         onSubmit={(values) => {
-          console.log(values);
+          handleFormSubmit(values);
         }}
       >
         {({ errors, touched }) => {
@@ -148,7 +160,6 @@ const ShippingForm = () => {
                     errors.state && touched.state ? styles.incorrect : ""
                   }`}
                 >
-                  {" "}
                   <label>State Code (e.g. CA)</label>
                   <Field name="state" />
                   {errors.state && touched.state ? (
@@ -160,7 +171,6 @@ const ShippingForm = () => {
                     errors.zipCode && touched.zipCode ? styles.incorrect : ""
                   }`}
                 >
-                  {" "}
                   <label>ZipCode</label>
                   <Field name="zipCode" />
                   {errors.zipCode && touched.zipCode ? (

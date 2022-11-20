@@ -32,8 +32,19 @@ label {
   padding-top: 3px;
 }
 
+input {
+  border: 2px solid transparent;
+  background-color: #dadada;
+  transition: 0.3s all ease;
+}
+
+input:focus,
+input:active {
+  outline: 0;
+}
+
 .incorrect input {
-  border: 5px solid red;
+  border: 2px solid red;
 }
 
 /* group of two form items side to side */
