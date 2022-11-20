@@ -19,7 +19,7 @@ const FigPicker = ({ figData }) => {
   };
 
   useEffect(() => {
-    // console.log(selectedFig);
+    console.log(selectedFig);
   }, [selectedFig]);
   //
   return (

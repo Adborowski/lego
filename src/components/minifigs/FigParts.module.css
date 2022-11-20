@@ -1,14 +1,18 @@
 .FigParts {
   border: 1px solid red;
-  max-width: 200px;
+  /* max-width: 200px; */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
 .figPart {
   border: 1px solid blue;
+  padding: 12px;
 }
 
 .name {
   font-size: 12px;
+  text-align: center;
 }
 
 .image {
@@ -16,4 +20,5 @@
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
+  margin-bottom: 12px;
 }
