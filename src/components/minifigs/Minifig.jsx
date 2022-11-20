@@ -15,7 +15,6 @@ const Minifig = ({ onFigSelection, figData, isActive }) => {
         style={{ backgroundImage: `url(${figData.set_img_url})` }}
       ></div>
       <div className={styles.name}>{figData.name}</div>
-      <div className={styles.controls}></div>
     </div>
   );
 };

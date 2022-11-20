@@ -1,5 +1,5 @@
 import styles from "./App.module.css";
-import Minifigs from "./components/minifigs/Minifigs";
+import FigPicker from "./components/minifigs/FigPicker";
 import { QueryClient, QueryClientProvider, useQuery } from "react-query";
 const queryClient = new QueryClient();
 import { useEffect } from "react";
@@ -14,7 +14,7 @@ const App = () => {
     console.log(setId);
   };
 
-  const { isLoading, error, data } = useQuery("repoData", () =>
+  const { isLoading, error, data } = useQuery("minifigData", () =>
     fetch(
       "https://rebrickable.com/api/v3/lego/minifigs/?in_theme_id=246&key=4a061f1fc0671c55d41c1d3991d185c9&page_size=400"
     ).then((res) => res.json())
@@ -52,7 +52,7 @@ const App = () => {
     <div className={styles.Welcome}>
       <h1 className={styles.headline}>Welcome to Lego Minifig randomizer!</h1>
       <QueryClientProvider client={queryClient}>
-        <Minifigs figData={randomMinifigs} onFigSelection={onFigSelection} />
+        <FigPicker figData={randomMinifigs} onFigSelection={onFigSelection} />
       </QueryClientProvider>
     </div>
   );
