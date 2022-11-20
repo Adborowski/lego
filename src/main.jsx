@@ -12,7 +12,7 @@ const router = createBrowserRouter([
     element: <App />,
   },
   {
-    path: "/checkout/:setId",
+    path: "/checkout",
     element: <Checkout />,
   },
 ]);

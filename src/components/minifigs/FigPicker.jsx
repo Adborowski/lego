@@ -1,12 +1,19 @@
 import styles from "./Minifigs.module.css";
 import Minifig from "./Minifig";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const FigPicker = ({ figData }) => {
+  //
+  const navigate = useNavigate();
   const [selectedFig, setSelectedFig] = useState("");
 
   const onFigSelection = (set_num) => {
     setSelectedFig(set_num);
+  };
+
+  const onChoiceConfirmation = () => {
+    navigate("/checkout", { state: { set_num: 5 } });
   };
 
   useEffect(() => {
@@ -28,7 +35,9 @@ const FigPicker = ({ figData }) => {
         })}
       </div>
       <div className={`${styles.controls}`}>
-        <button disabled={!selectedFig}>Choose</button>
+        <button onClick={onChoiceConfirmation} disabled={!selectedFig}>
+          Choose
+        </button>
       </div>
     </div>
   );

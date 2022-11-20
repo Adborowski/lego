@@ -3,17 +3,11 @@ import FigPicker from "./components/minifigs/FigPicker";
 import { QueryClient, QueryClientProvider, useQuery } from "react-query";
 const queryClient = new QueryClient();
 import { useEffect } from "react";
-
 import { useState } from "react";
+
 const App = () => {
-  const [selectedSetId, setSelectedSetId] = useState();
-
-  const [redirect, setRedirect] = useState();
-  const onFigSelection = (setId) => {
-    setRedirect(setId);
-    console.log(setId);
-  };
-
+  // query Rebrickable for the minifig data
+  // theme 246 is Harry Potter (363 items)
   const { isLoading, error, data } = useQuery("minifigData", () =>
     fetch(
       "https://rebrickable.com/api/v3/lego/minifigs/?in_theme_id=246&key=4a061f1fc0671c55d41c1d3991d185c9&page_size=400"
@@ -23,18 +17,18 @@ const App = () => {
   const [randomMinifigs, setRandomMinifigs] = useState([]);
   let howManyMinifigs = 3; // how many random figs do we want (default 3)
 
-  // set random minifigs
+  // when the data is ready
   useEffect(() => {
     if (data) {
       setRandomMinifigs([]);
       let allMinifigs = data.results;
 
-      // filter out the minifigs without an image
+      // filter out minifigs without an image
       let filteredMinifigs = allMinifigs.filter(
         (minifig) => minifig.set_img_url !== null
       );
 
-      // set the 3 random minifigs from the filtered set
+      // pick 3 random minifigs from the filtered set
       for (let i = 0; i < howManyMinifigs; i++) {
         setRandomMinifigs((randomMinifigs) => [
           ...randomMinifigs,
@@ -44,15 +38,17 @@ const App = () => {
     }
   }, [data]);
 
+  // log the randomized minifigs when they're ready
   useEffect(() => {
     console.log(randomMinifigs);
   }, [randomMinifigs]);
 
+  // pass the data down to FigPicker
   return (
     <div className={styles.Welcome}>
       <h1 className={styles.headline}>Welcome to Lego Minifig randomizer!</h1>
       <QueryClientProvider client={queryClient}>
-        <FigPicker figData={randomMinifigs} onFigSelection={onFigSelection} />
+        <FigPicker figData={randomMinifigs} />
       </QueryClientProvider>
     </div>
   );
