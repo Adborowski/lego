@@ -1,5 +1,5 @@
 import styles from "./FigPicker.module.css";
-import Minifig from "/src/components/Minifig/Minifig";
+import Minifig from "../Minifig/Minifig";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 

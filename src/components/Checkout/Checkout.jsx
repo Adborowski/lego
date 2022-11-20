@@ -1,7 +1,7 @@
 import { useLocation } from "react-router-dom";
 import styles from "./Checkout.module.css";
-import OrderSummary from "/src/components/OrderSummary/OrderSummary";
-import ShippingForm from "/src/components/ShippingForm/ShippingForm";
+import OrderSummary from "../OrderSummary/OrderSummary";
+import ShippingForm from "../ShippingForm/ShippingForm";
 
 const Checkout = () => {
   const location = useLocation();

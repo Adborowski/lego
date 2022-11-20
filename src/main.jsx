@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "/src/App";
+import App from "./App";
 import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
 import Checkout from "./components/Checkout/Checkout";
 import Welcome from "./components/Welcome/Welcome";
