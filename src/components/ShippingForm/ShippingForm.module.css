@@ -3,6 +3,13 @@
   padding-left: 6px;
 }
 
+@media screen and (max-width: 500px) {
+  .ShippingForm {
+    padding-left: unset;
+    padding: 18px;
+  }
+}
+
 Form {
   margin-top: 12px;
 }

@@ -13,5 +13,6 @@
 @media screen and (max-width: 700px) {
   .OrderSummary {
     order: -1;
+    margin-right: 0px;
   }
 }

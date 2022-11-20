@@ -5,7 +5,10 @@
   justify-content: center;
 }
 
-.controls {
+@media screen and (max-width: 500px) {
+  .Welcome {
+    padding: 12px;
+  }
 }
 
 button {

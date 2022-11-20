@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import styles from "./Minifigs.module.css";
+import styles from "./Minifig.module.css";
 
 const Minifig = ({ onFigSelection, figData, isActive }) => {
   return (

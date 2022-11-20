@@ -9,7 +9,7 @@ const Welcome = () => {
   return (
     <div className={styles.Welcome}>
       <div className={styles.controls}>
-        <h1>Lego Minifigs Mystery Box</h1>
+        <h1>Lego Minifigs Mystery&nbsp;Box</h1>
         <button onClick={handleStart}>Let's Go!</button>
       </div>
     </div>

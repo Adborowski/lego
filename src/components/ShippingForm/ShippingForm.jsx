@@ -63,7 +63,7 @@ const ShippingForm = () => {
 
   return (
     <div className={styles.ShippingForm}>
-      <h2>Shipping Form</h2>
+      <h2>Shipping Details</h2>
 
       <Formik
         initialValues={{
