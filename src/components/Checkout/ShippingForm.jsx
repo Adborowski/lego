@@ -46,7 +46,9 @@ const ShippingForm = () => {
         }}
       >
         {({ errors, touched }) => {
-          //   console.log(Object.keys(errors).length); // Log errors
+          console.log("Errors: " + Object.keys(errors).length); // Log errors
+          console.log("Touches: " + Object.keys(touched).length); // Log errors
+
           return (
             <Form>
               <div className={styles.pair}>
@@ -129,7 +131,13 @@ const ShippingForm = () => {
               </div>
 
               <div className={styles.controls}>
-                <button disabled={Object.keys(errors).length > 0} type="submit">
+                <button
+                  disabled={
+                    Object.keys(errors).length > 0 ||
+                    Object.keys(touched).length == 0
+                  }
+                  type="submit"
+                >
                   Submit
                 </button>
               </div>
