@@ -67,15 +67,15 @@ const ShippingForm = () => {
 
       <Formik
         initialValues={{
-          firstName: "Adam",
-          lastName: "Borowski",
-          email: "adborowski@gmail.com",
-          phoneNumber: "+48501502002",
-          dateOfBirth: "04/02/1994",
-          address: "asdasdasds",
-          city: "adsasdasd",
-          state: "CA",
-          zipCode: "12345",
+          firstName: "",
+          lastName: "",
+          email: "",
+          phoneNumber: "",
+          dateOfBirth: "",
+          address: "",
+          city: "",
+          state: "",
+          zipCode: "",
         }}
         validationSchema={ShippingSchema}
         onSubmit={(values) => {
