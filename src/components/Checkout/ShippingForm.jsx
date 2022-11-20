@@ -2,13 +2,20 @@ import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import styles from "./ShippingForm.module.css";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { QueryClient, QueryClientProvider, useQuery } from "react-query";
 
 const ShippingForm = () => {
+  const navigate = useNavigate();
   const reqError = "Field required"; // error message for required fields
   const [confirmation, setConfirmation] = useState("");
 
   useEffect(() => {
-    console.log(confirmation);
+    if (confirmation) {
+      window.setTimeout(() => {
+        navigate("/");
+      }, 1500);
+    }
   }, [confirmation]);
 
   // regex for phone number validation: https://ihateregex.io/expr/phone/
@@ -57,15 +64,15 @@ const ShippingForm = () => {
 
       <Formik
         initialValues={{
-          firstName: "",
-          lastName: "",
-          email: "",
-          phoneNumber: "",
-          dateOfBirth: "",
-          address: "",
-          city: "",
-          state: "",
-          zipCode: "",
+          firstName: "Adam",
+          lastName: "Borowski",
+          email: "adborowski@gmail.com",
+          phoneNumber: "+48501502002",
+          dateOfBirth: "04/02/1994",
+          address: "asdasdasds",
+          city: "adsasdasd",
+          state: "CA",
+          zipCode: "12345",
         }}
         validationSchema={ShippingSchema}
         onSubmit={(values) => {
