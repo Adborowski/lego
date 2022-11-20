@@ -6,14 +6,16 @@ import { useNavigate } from "react-router-dom";
 const FigPicker = ({ figData }) => {
   //
   const navigate = useNavigate();
+
+  // selectedFig is just the set_num of the fig, not the object
   const [selectedFig, setSelectedFig] = useState("");
 
-  const onFigSelection = (set_num) => {
-    setSelectedFig(set_num);
+  const onFigSelection = (figData) => {
+    setSelectedFig(figData);
   };
 
   const onChoiceConfirmation = () => {
-    navigate("/checkout", { state: { set_num: 5 } });
+    navigate("/checkout", { state: { selectedFig: selectedFig } });
   };
 
   useEffect(() => {
@@ -26,7 +28,7 @@ const FigPicker = ({ figData }) => {
         {figData.map((fig) => {
           return (
             <Minifig
-              isActive={selectedFig == fig.set_num ? true : false}
+              isActive={selectedFig.set_num == fig.set_num ? true : false}
               key={fig.set_num}
               onFigSelection={onFigSelection}
               figData={fig}

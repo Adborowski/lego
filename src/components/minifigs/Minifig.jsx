@@ -5,7 +5,7 @@ const Minifig = ({ onFigSelection, figData, isActive }) => {
   return (
     <div
       onClick={() => {
-        onFigSelection(figData.set_num);
+        onFigSelection(figData);
       }}
       className={`${styles.randomMinifig} ${isActive ? styles.active : ""}`}
       key={figData.name}
