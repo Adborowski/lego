@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import { QueryClient, QueryClientProvider, useQuery } from "react-query";
+import { useQuery } from "react-query";
 import styles from "./FigParts.module.css";
 
 const FigParts = (figData) => {
@@ -21,7 +21,7 @@ const FigParts = (figData) => {
   useEffect(() => {
     if (partsData) {
       setFigParts(partsData.results);
-      console.log(partsData.results);
+      // console.log(partsData.results);
     }
   }, [partsData]);
 

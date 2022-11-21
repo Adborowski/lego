@@ -19,7 +19,7 @@ const Background = () => {
     bgElements.push({ span: bgElementSpan, style: styleObject });
   }
 
-  console.log(bgElements);
+  // console.log(bgElements);
 
   return (
     <div className={styles.Background}>

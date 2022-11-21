@@ -1,7 +1,6 @@
 import Minifig from "../Minifig/Minifig";
 import FigParts from "../FigParts/FigParts";
 import styles from "./OrderSummary.module.css";
-import { useState, useEffect } from "react";
 
 const OrderSummary = (props) => {
   // console.log(props.figData);

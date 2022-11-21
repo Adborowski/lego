@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import styles from "./Minifig.module.css";
 
 const Minifig = ({ onFigSelection, figData, isActive }) => {
@@ -6,7 +5,7 @@ const Minifig = ({ onFigSelection, figData, isActive }) => {
     <div
       onClick={() => {
         onFigSelection(figData);
-        console.log(figData.set_url);
+        // console.log(figData.set_url);
       }}
       className={`${styles.Minifig} ${isActive ? styles.active : ""}`}
       key={figData.name}

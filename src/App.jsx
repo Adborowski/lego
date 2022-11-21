@@ -1,7 +1,6 @@
 import styles from "./App.module.css";
 import FigPicker from "./components/FigPicker/FigPicker";
-import { QueryClient, QueryClientProvider, useQuery } from "react-query";
-const queryClient = new QueryClient();
+import { useQuery } from "react-query";
 import { useEffect } from "react";
 import { useState } from "react";
 
@@ -40,7 +39,7 @@ const App = () => {
 
   // log the randomized minifigs when they're ready
   useEffect(() => {
-    console.log(randomMinifigs);
+    // console.log(randomMinifigs);
   }, [randomMinifigs]);
 
   // pass the data down to FigPicker
