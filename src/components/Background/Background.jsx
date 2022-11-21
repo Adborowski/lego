@@ -1,10 +1,8 @@
 import styles from "./Background.module.css";
 
 const Background = () => {
-  const backgroundElement = () => {
-    <span>?</span>;
-  };
-
+  //
+  const bgElementSpan = "?";
   const bgElements = [];
 
   for (let i = 1; i <= 500; i++) {
@@ -18,7 +16,7 @@ const Background = () => {
       fontWeight: `800`,
       transform: `rotate(${Math.random() * 60 * (i % 2 ? -1 : 1)}deg)`,
     };
-    bgElements.push({ span: "?", style: styleObject });
+    bgElements.push({ span: bgElementSpan, style: styleObject });
   }
 
   console.log(bgElements);
