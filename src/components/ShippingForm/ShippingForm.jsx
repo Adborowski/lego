@@ -41,7 +41,7 @@ const ShippingForm = () => {
       ),
     zipCode: Yup.string()
       .required(reqError)
-      .matches("^[0-9]{5}(?:-[0-9]{4})?$", "Invalid Zip code"),
+      .matches("^[0-9]{5}(?:-[0-9]{4})?$", "Invalid Zip Code"),
   });
 
   const [isLoading, setIsLoading] = useState(false);
