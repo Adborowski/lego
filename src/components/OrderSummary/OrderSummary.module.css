@@ -14,5 +14,9 @@
   .OrderSummary {
     order: -1;
     margin-right: 0px;
+    max-width: 350px;
+    margin: auto;
+    margin-bottom: 12px;
+    margin-top: 12px;
   }
 }

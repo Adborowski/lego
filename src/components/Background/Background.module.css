@@ -1,7 +1,7 @@
 .Background {
   width: 100vw;
-  height: 100vh;
-  position: absolute;
+  max-height: 100vh;
+  position: fixed;
   z-index: -100;
   animation: 600s forwards alternate float linear;
 }

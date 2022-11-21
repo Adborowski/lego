@@ -27,8 +27,7 @@
 body {
   background-color: var(--color-1);
   position: relative;
-  max-height: 100vh;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .App {
