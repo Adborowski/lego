@@ -9,4 +9,5 @@ const htmlPluginOpt = {
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react(), htmlPlugin(htmlPluginOpt)],
+  base: "./",
 });

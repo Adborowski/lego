@@ -1,0 +1,30 @@
+.Background {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  z-index: -100;
+  animation: 600s forwards alternate float linear;
+}
+
+.bgItem {
+  /* animation: 5s appear alternate; */
+}
+
+@keyframes float {
+  0% {
+    top: 0px;
+  }
+  100% {
+    top: -12000px;
+  }
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

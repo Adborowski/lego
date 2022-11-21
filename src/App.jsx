@@ -48,9 +48,7 @@ const App = () => {
     <div className={styles.App}>
       <div className={styles.content}>
         <h1 className={styles.headline}>Choose your minifig</h1>
-        <QueryClientProvider client={queryClient}>
-          <FigPicker figData={randomMinifigs} />
-        </QueryClientProvider>
+        <FigPicker figData={randomMinifigs} />
       </div>
     </div>
   );
