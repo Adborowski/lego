@@ -196,7 +196,7 @@ const ShippingForm = () => {
                     errors.zipCode && touched.zipCode ? styles.incorrect : ""
                   }`}
                 >
-                  <label>ZipCode</label>
+                  <label>Zip Code</label>
                   <Field name="zipCode" />
                   {errors.zipCode && touched.zipCode ? (
                     <div className={styles.errors}>{errors.zipCode}</div>
