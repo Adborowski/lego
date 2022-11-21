@@ -16,6 +16,7 @@ const Background = () => {
       opacity: `${Math.random() * 0.1}`,
       fontSize: `${Math.random() * 200}px`,
       fontWeight: `800`,
+      transform: `rotate(${Math.random() * 60 * (i % 2 ? -1 : 1)}deg)`,
     };
     bgElements.push({ span: "?", style: styleObject });
   }
